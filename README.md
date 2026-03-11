@@ -206,7 +206,7 @@ ESP32 GPIO0 →  GND (for upload mode)
 ### 3. Arduino Uno Setup
 
 <p align="center">
-  <img src="docs/arduino_wiring.png" alt="Arduino Wiring Diagram" width="600"/>
+  <img src="docs/picture5.png" alt="Arduino Wiring Diagram" width="600"/>
 </p>
 
 #### Hardware Connections
@@ -266,7 +266,7 @@ ESP8266 GND     → Arduino GND (common ground)
 ### 4. ESP8266 NodeMCU Setup
 
 <p align="center">
-  <img src="docs/esp8266_wiring.png" alt="ESP8266 Connections" width="500"/>
+  <img src="docs/Picture6.png" alt="ESP8266 Connections" width="500"/>
 </p>
 
 #### Hardware Connections
@@ -328,11 +328,6 @@ ESP8266 GND → Common GND
 ## Hardware Assembly
 
 ### Workspace Setup
-
-<p align="center">
-  <img src="docs/workspace_setup.jpg" alt="Workspace Layout" width="600"/>
-</p>
-
 1. **Mount Camera**:
    - Position ESP32-CAM approximately 22 cm directly above workspace center
    - Ensure camera lens faces straight down (perpendicular to board)
@@ -341,15 +336,11 @@ ESP8266 GND → Common GND
 2. **Place ArUco Markers**:
    - Print 4 ArUco markers (DICT_4X4_250, IDs: 0, 1, 2, 3)
    - Attach to workspace corners:
-```
-     ID 1 (Top-Left)        ID 2 (Top-Right)
-           ┌─────────────┐
-           │             │
-           │   Workspace │
-           │             │
-           └─────────────┘
-     ID 0 (Bottom-Left)     ID 3 (Bottom-Right)
-```
+   - 
+<p align="center">
+  <img src="docs/Picture7.png" alt="Workspace Layout" width="600"/>
+</p>
+
    - Measure and note inter-marker distances in `server.py`:
 ```python
      MARKER_DIST_03 = 22.9  # Bottom edge (cm)
@@ -593,7 +584,7 @@ If you use this work in your research, please cite:
 
 Your Name - your.email@example.com
 
-Project Link: [https://github.com/YOUR_USERNAME/vision-guided-sorting](https://github.com/YOUR_USERNAME/vision-guided-sorting)
+Project Link: [https://github.com/YOUR_USERNAME/vision-guided-sorting](https://github.com/JafferSaeed888/vision-guided-sorting)
 
 ---
 
@@ -613,19 +604,5 @@ Project Link: [https://github.com/YOUR_USERNAME/vision-guided-sorting](https://g
 
 ---
 
-## How to Add Images to README
 
-### Method 1: Images in Repository (Recommended)
 
-1. **Create a `docs/` folder** in your repository:
-```
-   your-repo/
-   ├── docs/
-   │   ├── system_overview.jpg
-   │   ├── hardware_components.jpg
-   │   ├── esp32cam_wiring.png
-   │   ├── arduino_wiring.png
-   │   ├── esp8266_wiring.png
-   │   └── workspace_setup.jpg
-   ├── server.py
-   └── README.md
