@@ -386,8 +386,6 @@ If you need to recalibrate the camera:
 
 3. **Verify Calibration**:
    - Run the system and check ArUco detection stability
-   - Should see "Board LOCKED" with stable green outline
-
 ### Robot Offset Calibration
 
 1. **Measure Robot Base Position**:
@@ -461,7 +459,7 @@ If you need to recalibrate the camera:
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### ESP32-CAM Issues
 
@@ -529,7 +527,7 @@ If you need to recalibrate the camera:
 
 ---
 
-## 📊 Performance
+## Performance
 
 | Metric | Value |
 |--------|-------|
@@ -547,7 +545,7 @@ If you need to recalibrate the camera:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -557,15 +555,13 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
+## License
 
-## 📄 License
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 📚 Citation
+## Citation
 
 If you use this work in your research, please cite:
 ```bibtex
@@ -580,7 +576,7 @@ If you use this work in your research, please cite:
 
 ---
 
-## 📧 Contact
+## Contact
 
 Jaffer Saeed - jaffersaeed888@gmail.com
 
@@ -588,7 +584,7 @@ Project Link: [https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Proce
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Ultralytics YOLOv11](https://github.com/ultralytics/ultralytics)
 - [OpenCV](https://opencv.org/)
