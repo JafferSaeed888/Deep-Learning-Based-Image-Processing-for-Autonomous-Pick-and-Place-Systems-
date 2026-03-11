@@ -5,7 +5,7 @@ Autonomous robotic manipulator powered by Python Flask, Arduino, and Computer Vi
 # Vision-Guided Robotic Sorting System
 
 <p align="center">
-  <img src="img/Picture1.png" alt="System Overview" width="600"/>
+  <img src="img/Picture2.jpeg" alt="System Overview" width="600"/>
 </p>
 
 > Low-cost autonomous pick-and-place using YOLOv11 + Adaptive Segmentation for educational and small-scale applications
@@ -42,9 +42,6 @@ This project implements a complete vision-guided robotic sorting system that add
 1. **Incomplete detection coverage** - Hybrid YOLOv11 + Adaptive Segmentation
 2. **Monocular projection errors** - Geometric parallax correction
 3. **Low-DOF kinematic constraints** - Analytical inverse kinematics with contact verification
-
-![Detection Pipeline](docs/detection_pipeline.png)
-
 The system achieves:
 - **0.995 mAP@0.5** for trained object detection
 - **94.3%** reliability for unknown object segmentation
@@ -64,10 +61,6 @@ The system achieves:
 ---
 
 ## Hardware Requirements
-
-<p align="center">
-  <img src="docs/hardware_components.jpg" alt="Hardware Components" width="700"/>
-</p>
 
 ### Core Components
 
