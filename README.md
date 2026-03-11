@@ -5,7 +5,7 @@ Autonomous robotic manipulator powered by Python Flask, Arduino, and Computer Vi
 # Vision-Guided Robotic Sorting System
 
 <p align="center">
-  <img src="docs/system_overview.jpg" alt="System Overview" width="600"/>
+  <img src="img/Picture1.png" alt="System Overview" width="600"/>
 </p>
 
 > Low-cost autonomous pick-and-place using YOLOv11 + Adaptive Segmentation for educational and small-scale applications
@@ -13,7 +13,7 @@ Autonomous robotic manipulator powered by Python Flask, Arduino, and Computer Vi
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -36,7 +36,7 @@ Autonomous robotic manipulator powered by Python Flask, Arduino, and Computer Vi
 
 ---
 
-## 🎯 Overview
+## Overview
 
 This project implements a complete vision-guided robotic sorting system that addresses three fundamental challenges:
 1. **Incomplete detection coverage** - Hybrid YOLOv11 + Adaptive Segmentation
@@ -53,17 +53,17 @@ The system achieves:
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔍 **Hybrid Object Detection**: YOLOv11 for known objects + adaptive thresholding for unknowns
-- 📐 **Monocular Localization**: ArUco-based calibration with parallax correction
-- 🤖 **Closed-Loop Control**: Contact sensor verification with error recovery
-- 🌐 **Distributed Architecture**: WiFi-based communication between vision server and robot
-- 💰 **Low-Cost Hardware**: Consumer-grade camera and hobby servos (~$150 total)
+-  **Hybrid Object Detection**: YOLOv11 for known objects + adaptive thresholding for unknowns
+-  **Monocular Localization**: ArUco-based calibration with parallax correction
+-  **Closed-Loop Control**: Contact sensor verification with error recovery
+-  **Distributed Architecture**: WiFi-based communication between vision server and robot
+-  **Low-Cost Hardware**: Consumer-grade camera and hobby servos (~$150 total)
 
 ---
 
-## 🛠️ Hardware Requirements
+## Hardware Requirements
 
 <p align="center">
   <img src="docs/hardware_components.jpg" alt="Hardware Components" width="700"/>
@@ -95,7 +95,7 @@ The system achieves:
 
 ---
 
-## 💻 Software Requirements
+## Software Requirements
 
 - **Operating System**: Windows 10/11, Linux, or macOS
 - **Python**: 3.8 or higher
@@ -104,7 +104,7 @@ The system achieves:
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Python Environment Setup
 
@@ -332,7 +332,7 @@ ESP8266 GND → Common GND
 
 ---
 
-## 🔧 Hardware Assembly
+## Hardware Assembly
 
 ### Workspace Setup
 
@@ -381,7 +381,7 @@ ESP8266 GND → Common GND
 
 ---
 
-## 📏 Calibration
+## Calibration
 
 ### Camera Calibration
 
@@ -423,7 +423,7 @@ If you need to recalibrate the camera:
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Starting the System
 
@@ -470,44 +470,10 @@ If you need to recalibrate the camera:
 
 ---
 
-## 🏗️ System Architecture
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     Vision Processing Server                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │   YOLOv11    │  │   Adaptive   │  │  Homography  │      │
-│  │  Detection   │  │  Threshold   │  │ + Parallax   │      │
-│  │              │  │ Segmentation │  │  Correction  │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-│         │                  │                  │              │
-│         └──────────────────┴──────────────────┘              │
-│                            │                                 │
-│                   ┌────────▼────────┐                        │
-│                   │  Object Tracker │                        │
-│                   │  & Prioritizer  │                        │
-│                   └────────┬────────┘                        │
-└────────────────────────────┼──────────────────────────────────┘
-                             │ HTTP/JSON
-                    ┌────────▼────────┐
-                    │   ESP8266 WiFi  │
-                    │  Communication  │
-                    │     Bridge      │
-                    └────────┬────────┘
-                             │ UART (38400 baud)
-                    ┌────────▼────────┐
-                    │   Arduino Uno   │
-                    │  Motor Control  │
-                    │   + Inverse     │
-                    │   Kinematics    │
-                    └────────┬────────┘
-                             │ PWM Signals
-                    ┌────────▼────────┐
-                    │  meArm 3-DOF    │
-                    │   Manipulator   │
-                    │  + Contact      │
-                    │    Sensor       │
-                    └─────────────────┘
-```
+## System Architecture
+<p align="center">
+  <img src="img/Picture1.png" alt="System Overview" width="600"/>
+</p>
 
 ---
 
