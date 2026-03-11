@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Object Detection Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .controls-panel {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .stream-controls {
+            padding: 0 15px;
+            text-align: center;
+        }
+        .stream-controls button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background: #fff;
+            transition: background 0.2s;
+        }
+        .stream-controls button:hover:not(:disabled) {
+            background: #eee;
+        }
+        .stream-controls button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        #stream-status {
+            font-weight: bold;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 4px solid #555;
+            background: #000;
+            min-height: 480px; /* Assuming 640x480 resolution */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #video-feed {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hybrid Detection</h1>
+        
+        <div class="controls-panel">
+            <div class="stream-controls">
+                <h2>Stream Control</h2>
+                <p><strong>Stream Status:</strong> <span id="stream-status" style="color: red;">Streaming (OFF)</span></p>
+                <p><strong>FPS:</strong> <span id="fps-display">N/A</span></p>
+                <button id="start-btn" onclick="toggleStream('start')">START Stream</button>
+                <button id="stop-btn" onclick="toggleStream('stop')" disabled>STOP Stream</button>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <img id="video-feed" src="" alt="Live Detection Feed">
+        </div>
+    </div>
+
+    <script>
+        let pollingInterval;
+
+        function updateStatusDisplay(statusData) {
+            // Stream Status and Controls
+            const isStreaming = statusData.streaming;
+            document.getElementById('stream-status').textContent = isStreaming ? 'Streaming (ON)' : 'Streaming (OFF)';
+            document.getElementById('stream-status').style.color = isStreaming ? 'green' : 'red';
+            document.getElementById('start-btn').disabled = isStreaming;
+            document.getElementById('stop-btn').disabled = !isStreaming;
+            
+            // FPS Display
+            document.getElementById('fps-display').textContent = statusData.fps !== undefined ? statusData.fps.toFixed(1) : 'N/A';
+
+            if (isStreaming && !document.getElementById('video-feed').src.includes('/video_feed')) {
+                document.getElementById('video-feed').src = '/video_feed?' + new Date().getTime();
+            } else if (!isStreaming && document.getElementById('video-feed').src) {
+                 // Clear the image source only if it's currently showing a feed
+                document.getElementById('video-feed').src = '';
+            }
+        }
+
+        async function getStatus() {
+            try {
+                const response = await fetch('/status');
+                if (response.ok) {
+                    const data = await response.json();
+                    updateStatusDisplay(data);
+                }
+            } catch (error) {
+                console.error("Error fetching status:", error);
+                // Handle disconnection gracefully if needed
+            }
+        }
+
+        async function toggleStream(action) {
+            const endpoint = action === 'start' ? '/start_stream' : '/stop_stream';
+            
+            try {
+                const response = await fetch(endpoint, { method: 'POST' });
+                const data = await response.json();
+                
+                if (data.status === 'started' || data.status === 'stopped') {
+                    // Update status after action
+                    getStatus();
+                } else {
+                    alert('Error: ' + (data.message || data.status));
+                }
+            } catch (error) {
+                console.error(`Error ${action}ing stream:`, error);
+                alert(`Could not connect to the server to ${action} the stream.`);
+            }
+        }
+
+        window.onload = () => {
+            getStatus();
+            pollingInterval = setInterval(getStatus, 1000);
+        };
+    </script>
+</body>
+</html>
