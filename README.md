@@ -595,14 +595,9 @@ Project Link: [https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Proce
 - [meArm Project](https://www.mearm.com/)
 - University of Poonch Rawalakot - Department of Electrical Engineering
 
----
 
-<p align="center">
-  Made with ❤️ for educational embedded system robotics and automation research
-</p>
-```
 
----
+
 
 
 
