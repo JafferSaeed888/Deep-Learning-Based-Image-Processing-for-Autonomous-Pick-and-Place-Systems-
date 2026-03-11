@@ -574,7 +574,7 @@ If you use this work in your research, please cite:
   title = {Deep Learning Based Image Processing for Autonomous Pick and Place Systems},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems-}
+  url = {https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems}
 }
 ```
 
@@ -584,7 +584,7 @@ If you use this work in your research, please cite:
 
 Jaffer Saeed - jaffersaeed888@gmail.com
 
-Project Link: [https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems-]
+Project Link: [https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems]
 
 ---
 
