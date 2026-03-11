@@ -145,7 +145,7 @@ python -c "from ultralytics import YOLO; print('YOLO OK')"
 ### 2. ESP32-CAM Setup
 
 <p align="center">
-  <img src="docs/esp32cam_wiring.png" alt="ESP32-CAM Wiring" width="500"/>
+  <img src="img/Picture3.png" alt="ESP32-CAM Wiring" width="500"/>
 </p>
 
 #### Hardware Connections (Programming Mode)
@@ -183,7 +183,7 @@ ESP32 GPIO0 →  GND (for upload mode)
    Port: Select your FTDI adapter port
 ```
 
-4. **Update WiFi Credentials** in `esp_cam/esp_cam.ino`:
+4. **Update WiFi Credentials** in `esp_cam/espcam_MJPEG.ino`:
 ```cpp
    const char* ssid = "YOUR_WIFI_SSID";
    const char* password = "YOUR_WIFI_PASSWORD";
@@ -206,7 +206,7 @@ ESP32 GPIO0 →  GND (for upload mode)
 ### 3. Arduino Uno Setup
 
 <p align="center">
-  <img src="docs/picture5.png" alt="Arduino Wiring Diagram" width="600"/>
+  <img src="img/Picture5.png" alt="Arduino Wiring Diagram" width="600"/>
 </p>
 
 #### Hardware Connections
@@ -266,7 +266,7 @@ ESP8266 GND     → Arduino GND (common ground)
 ### 4. ESP8266 NodeMCU Setup
 
 <p align="center">
-  <img src="docs/Picture6.png" alt="ESP8266 Connections" width="500"/>
+  <img src="img/Picture6.png" alt="ESP8266 Connections" width="500"/>
 </p>
 
 #### Hardware Connections
@@ -338,7 +338,7 @@ ESP8266 GND → Common GND
    - Attach to workspace corners:
    - 
 <p align="center">
-  <img src="docs/Picture7.png" alt="Workspace Layout" width="600"/>
+  <img src="img/Picture7.png" alt="Workspace Layout" width="600"/>
 </p>
 
    - Measure and note inter-marker distances in `server.py`:
@@ -570,11 +570,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you use this work in your research, please cite:
 ```bibtex
 @misc{vision-guided-sorting-2025,
-  author = {Your Name},
-  title = {Vision-Guided Robotic Sorting System: Low-Cost Autonomous Pick-and-Place},
+  author = {Jaffer Saeed},
+  title = {Deep Learning Based Image Processing for Autonomous Pick and Place Systems},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/YOUR_USERNAME/vision-guided-sorting}
+  url = {https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems-}
 }
 ```
 
@@ -582,9 +582,9 @@ If you use this work in your research, please cite:
 
 ## 📧 Contact
 
-Your Name - your.email@example.com
+Jaffer Saeed - jaffersaeed888@gmail.com
 
-Project Link: [https://github.com/YOUR_USERNAME/vision-guided-sorting](https://github.com/JafferSaeed888/vision-guided-sorting)
+Project Link: [https://github.com/JafferSaeed888/Deep-Learning-Based-Image-Processing-for-Autonomous-Pick-and-Place-Systems-]
 
 ---
 
@@ -598,7 +598,7 @@ Project Link: [https://github.com/YOUR_USERNAME/vision-guided-sorting](https://g
 ---
 
 <p align="center">
-  Made with ❤️ for educational robotics and automation research
+  Made with ❤️ for educational embedded system robotics and automation research
 </p>
 ```
 
