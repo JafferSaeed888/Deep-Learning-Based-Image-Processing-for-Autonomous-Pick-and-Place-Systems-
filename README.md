@@ -566,7 +566,7 @@ Contributions are welcome! Please follow these steps:
 If you use this work in your research, please cite:
 ```bibtex
 @misc{vision-guided-sorting-2025,
-  author = {Jaffer Saeed},
+  author = {Jaffer Saeed}, {Zukhruf Ifthikhar}
   title = {Deep Learning Based Image Processing for Autonomous Pick and Place Systems},
   year = {2025},
   publisher = {GitHub},
